@@ -6,35 +6,35 @@ import java.sql.Date;
 @Entity
 public class Booking{
 
-    private @Id @GeneratedValue(strategy = GenerationType.AUTO) Long id_booking;
-
-    //TODO: id_room
+    private @Id @GeneratedValue(strategy = GenerationType.AUTO) Integer id_booking;
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_room")
+    @JoinColumn(name = "id_room", referencedColumnName = "id_room")
     private Room room;
 
     private String guest_full_name;
     private String guest_email;
     private String guest_phone;
-    private Date checkin_date;
-    private Date checkout_date;
+    private Integer num_of_guests;
+    private String checkin_date;
+    private String checkout_date;
 
     public Booking() {
     }
 
-    public Booking(String guest_full_name, String guest_email, String guest_phone, Date checkin_date, Date checkout_date) {
+    public Booking(String guest_full_name, String guest_email, String guest_phone, Integer num_of_guests, String checkin_date, String checkout_date) {
         this.guest_full_name = guest_full_name;
         this.guest_email = guest_email;
         this.guest_phone = guest_phone;
+        this.num_of_guests = num_of_guests;
         this.checkin_date = checkin_date;
         this.checkout_date = checkout_date;
     }
 
-    public Long getId_booking() {
+    public Integer getId_booking() {
         return id_booking;
     }
 
-    public void setId_booking(Long id_booking) {
+    public void setId_booking(Integer id_booking) {
         this.id_booking = id_booking;
     }
 
@@ -62,19 +62,35 @@ public class Booking{
         this.guest_phone = guest_phone;
     }
 
-    public Date getCheckin_date() {
+    public Integer getNum_of_guests() {
+        return num_of_guests;
+    }
+
+    public void setNum_of_guests(Integer num_of_guests) {
+        this.num_of_guests = num_of_guests;
+    }
+
+    public String getCheckin_date() {
         return checkin_date;
     }
 
-    public void setCheckin_date(Date checkin_date) {
+    public void setCheckin_date(String checkin_date) {
         this.checkin_date = checkin_date;
     }
 
-    public Date getCheckout_date() {
+    public String getCheckout_date() {
         return checkout_date;
     }
 
-    public void setCheckout_date(Date checkout_date) {
+    public void setCheckout_date(String checkout_date) {
         this.checkout_date = checkout_date;
+    }
+
+    public Room getRoom() {
+        return room;
+    }
+
+    public void setRoom(Room room) {
+        this.room = room;
     }
 }

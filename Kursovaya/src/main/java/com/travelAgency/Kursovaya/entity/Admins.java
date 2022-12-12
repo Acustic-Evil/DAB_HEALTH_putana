@@ -5,7 +5,7 @@ import javax.persistence.*;
 
 @Entity
 public class Admins {
-    private @Id @GeneratedValue(strategy = GenerationType.AUTO) Long id_user;
+    private @Id @GeneratedValue(strategy = GenerationType.AUTO) Integer id_user;
 
     private String roles;
     @Column(unique = true)
@@ -21,11 +21,11 @@ public class Admins {
         this.password = password;
     }
 
-    public Long getId_user() {
+    public Integer getId_user() {
         return id_user;
     }
 
-    public void setId_user(Long id_user) {
+    public void setId_user(Integer id_user) {
         this.id_user = id_user;
     }
 

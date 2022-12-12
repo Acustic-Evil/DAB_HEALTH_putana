@@ -7,15 +7,15 @@ import javax.persistence.*;
 @Table
 public class Room {
 
-    @OneToOne(mappedBy="room", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToOne(mappedBy="room")
     private Booking booking;
 
-    private @Id @GeneratedValue(strategy = GenerationType.AUTO) int id_room;
+    private @Id @GeneratedValue(strategy = GenerationType.AUTO) Integer id_room;
     private boolean occupied;
     private String number_of_bedrooms;
     @Column(unique = true)
     private String room_number;
-    private String luxury_level;
+    private String luxuryLevel;
 
     public Room() {
     }
@@ -51,20 +51,20 @@ public class Room {
         this.room_number = room_number;
     }
 
-    public String getLuxury_level() {
-        return luxury_level;
+    public String getLuxuryLevel() {
+        return luxuryLevel;
     }
 
-    public void setLuxury_level(String luxury_level) {
-        this.luxury_level = luxury_level;
+    public void setLuxuryLevel(String luxuryLevel) {
+        this.luxuryLevel = luxuryLevel;
     }
 
 
-    public Room(boolean occupied, String number_of_bedrooms, String room_number, String luxury_level) {
+    public Room(boolean occupied, String number_of_bedrooms, String room_number, String luxuryLevel) {
         this.occupied = occupied;
         this.number_of_bedrooms = number_of_bedrooms;
         this.room_number = room_number;
-        this.luxury_level = luxury_level;
+        this.luxuryLevel = luxuryLevel;
     }
 }
 

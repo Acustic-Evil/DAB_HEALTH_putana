@@ -1,48 +1,29 @@
-/*
 package com.travelAgency.Kursovaya.service;
 
-import com.travelAgency.Kursovaya.entity.Hotel;
 import com.travelAgency.Kursovaya.entity.Room;
-import com.travelAgency.Kursovaya.repository.HotelRepository;
+import com.travelAgency.Kursovaya.repository.BookingRepository;
 import com.travelAgency.Kursovaya.repository.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class HotelService {
 
     @Autowired
-    HotelRepository hotelRepository;
-    @Autowired
     RoomRepository roomRepository;
 
-    public List<Hotel> getAllHotel(){
-        return  hotelRepository.findAll();
-    }
+    @Autowired
+    BookingRepository bookingRepository;
 
-    public List<Room> addNewRoom(int count, String hotelName){
-        Hotel hotel = hotelRepository.findByName(hotelName);
-        for(int i=0; i<count; i++){
-            roomRepository.save(new Room(hotel,i,false));
-        }
+    public List<Room> getAllRooms() {
         return roomRepository.findAll();
     }
 
-    public void createNewHotel(String name, String addres){
-        hotelRepository.save(new Hotel(name,addres));
-    }
-    public void deleteByHotelId(String idString){
-        hotelRepository.deleteById(Long.parseLong(idString));
-    }
-    public void deleteByRoomId(String idString){
-        roomRepository.deleteById(Long.parseLong(idString));
-    }
+   /* public Optional<Room> getExactRoom(Integer id_room) {
+        return roomRepository.findById(id_room);
+    }*/
 
-    public void denide(String idRoom){};
-    public void acsept(String idRoom){};
-
-    public void rent(String idRoom){};
 }
-*/
