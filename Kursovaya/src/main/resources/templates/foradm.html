@@ -18,28 +18,27 @@
     <div class="main_title">Заявки на бронирование номера</div>
     <table class="table">
         <thead>
-        <tr>
+        <tr style="border-bottom:1px solid black" >
             <th>ФИО</th>
             <th>Телефон</th>
             <th>Почта</th>
-            <th>Тип номера</th>
-            <th>Номер комнаты</th>
             <th>Дата заезда</th>
             <th>Дата выезда</th>
             <th>Количество гостей</th>
         </tr>
         </thead>
         <tbody>
-        <!--<tr th:each="booking: ${bookingList}">
+        <tr style="border-bottom:1px solid black" th:each="booking: ${bookingList}">
             <td th:text="${booking.guest_full_name}"></td>
             <td th:text="${booking.guest_phone}"></td>
             <td th:text="${booking.guest_email}"></td>
-            <td  ="rooms: ${roomsList}" th:text="${rooms.luxury_level}"></td>
-            <td th:each="rooms: ${roomsList}" th:text="${rooms.room_number}"></td>
             <td th:text="${booking.checkin_date}"></td>
             <td th:text="${booking.checkout_date}"></td>
             <td th:text="${booking.num_of_guests}"></td>
-        </tr>-->
+           <!-- <td></td>
+            <td></td>-->
+            <!--<td  ="rooms: ${roomsList}" th:text="${rooms.luxury_level}"></td>
+            <td th:each="rooms: ${roomsList}" th:text="${rooms.room_number}"></td>-->
         </tbody>
     </table>
 </div>

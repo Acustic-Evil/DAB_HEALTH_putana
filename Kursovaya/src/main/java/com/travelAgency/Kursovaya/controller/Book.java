@@ -16,22 +16,15 @@ public class Book {
     private BookingRepository bookingRepository;
     @Autowired
     private RoomRepository roomRepository;
-    Booking book = new Booking();
 
     @PostMapping("/booking")
     private String bookNumber(@RequestParam(value = "rooms") String rooms, @RequestParam(value ="full_name") String full_name, @RequestParam(value = "phone") String phone, @RequestParam(value = "email") String email, @RequestParam("datein") String datein, @RequestParam("dateout") String dateout, @RequestParam("guests") int guests) {
 
         if(roomRepository.findRoom(rooms, false)) {
-            Booking booking = new Booking(full_name, email, phone, guests, datein, dateout);
-
-            book.setRoom(roomRepository.getFirstByLuxuryLevelAndOccupied(rooms, false));
-
-
+            Booking booking = new Booking(roomRepository.getFirstByLuxuryLevelAndOccupied(rooms, false), full_name, email, phone, guests, datein, dateout );
             Room room = roomRepository.getFirstByLuxuryLevelAndOccupied(rooms, false);
             room.setOccupied(true);
-
             /*roomRepository.setRoom_occ(rooms, false);*/
-
             bookingRepository.save(booking);
             roomRepository.save(room);
             return "redirect:/";

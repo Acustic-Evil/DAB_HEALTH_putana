@@ -29,10 +29,10 @@ public class Admin {
 
     @GetMapping("")
     public String getAdminPage(Model model) {
-       /* List<Booking> booking = bookingService.getAll();
+        List<Booking> booking = bookingService.getAll();
         List<Room> rooms = hotelService.getAllRooms();
         model.addAttribute("bookingList", booking);
-        model.addAttribute("roomsList", rooms);*/
+      /*  model.addAttribute("roomsList", rooms);*/
 
         return "foradm";
     }

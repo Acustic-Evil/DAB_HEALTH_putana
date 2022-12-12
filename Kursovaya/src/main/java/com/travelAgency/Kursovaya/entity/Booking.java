@@ -21,6 +21,16 @@ public class Booking{
     public Booking() {
     }
 
+    public Booking(Room room, String guest_full_name, String guest_email, String guest_phone, Integer num_of_guests, String checkin_date, String checkout_date) {
+        this.room = room;
+        this.guest_full_name = guest_full_name;
+        this.guest_email = guest_email;
+        this.guest_phone = guest_phone;
+        this.num_of_guests = num_of_guests;
+        this.checkin_date = checkin_date;
+        this.checkout_date = checkout_date;
+    }
+
     public Booking(String guest_full_name, String guest_email, String guest_phone, Integer num_of_guests, String checkin_date, String checkout_date) {
         this.guest_full_name = guest_full_name;
         this.guest_email = guest_email;
