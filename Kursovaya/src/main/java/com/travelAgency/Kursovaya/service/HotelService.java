@@ -22,8 +22,4 @@ public class HotelService {
         return roomRepository.findAll();
     }
 
-   /* public Optional<Room> getExactRoom(Integer id_room) {
-        return roomRepository.findById(id_room);
-    }*/
-
 }

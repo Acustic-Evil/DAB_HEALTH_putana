@@ -135,13 +135,25 @@ h1, h2, h3, h4, h5
 {
    width: 24.8%;  
 }
-.namespace
+.namespace_success
 {
     padding: 20px 40px;
     border-radius: 15px;
     font-size: 20px;
     margin: 15px auto;
+    text-align: center;
+    color: greenyellow;
 }
+.namespace_error
+{
+    padding: 20px 40px;
+    border-radius: 15px;
+    font-size: 20px;
+    margin: 15px auto;
+    text-align: center;
+    color: #ff8888;
+}
+
 .Pool.room
 {
     width: 75%;

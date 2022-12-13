@@ -1,14 +1,13 @@
 package com.travelAgency.Kursovaya.entity;
 
 import javax.persistence.*;
-import java.sql.Date;
 
 @Entity
 public class Booking{
 
-    private @Id @GeneratedValue(strategy = GenerationType.AUTO) Integer id_booking;
+    private @Id @GeneratedValue(strategy = GenerationType.AUTO) Integer idBooking;
     @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_room", referencedColumnName = "id_room")
+    @JoinColumn(name = "idRoom", referencedColumnName = "idRoom")
     private Room room;
 
     private String guest_full_name;
@@ -31,21 +30,13 @@ public class Booking{
         this.checkout_date = checkout_date;
     }
 
-    public Booking(String guest_full_name, String guest_email, String guest_phone, Integer num_of_guests, String checkin_date, String checkout_date) {
-        this.guest_full_name = guest_full_name;
-        this.guest_email = guest_email;
-        this.guest_phone = guest_phone;
-        this.num_of_guests = num_of_guests;
-        this.checkin_date = checkin_date;
-        this.checkout_date = checkout_date;
+
+    public Integer getIdBooking() {
+        return idBooking;
     }
 
-    public Integer getId_booking() {
-        return id_booking;
-    }
-
-    public void setId_booking(Integer id_booking) {
-        this.id_booking = id_booking;
+    public void setIdBooking(Integer id_booking) {
+        this.idBooking = id_booking;
     }
 
     public String getGuest_full_name() {
@@ -99,6 +90,7 @@ public class Booking{
     public Room getRoom() {
         return room;
     }
+
 
     public void setRoom(Room room) {
         this.room = room;

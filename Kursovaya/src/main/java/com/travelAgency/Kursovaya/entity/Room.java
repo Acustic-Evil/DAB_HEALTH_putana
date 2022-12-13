@@ -10,7 +10,7 @@ public class Room {
     @OneToOne(mappedBy="room")
     private Booking booking;
 
-    private @Id @GeneratedValue(strategy = GenerationType.AUTO) Integer id_room;
+    private @Id @GeneratedValue(strategy = GenerationType.AUTO) Integer idRoom;
     private boolean occupied;
     private String number_of_bedrooms;
     @Column(unique = true)
@@ -19,12 +19,12 @@ public class Room {
 
     public Room() {
     }
-    public int getId_room() {
-        return id_room;
+    public int getIdRoom() {
+        return idRoom;
     }
 
-    public void setId_room(int id_room) {
-        this.id_room = id_room;
+    public void setIdRoom(int idRoom) {
+        this.idRoom = idRoom;
     }
 
     public boolean isOccupied() {
@@ -59,12 +59,5 @@ public class Room {
         this.luxuryLevel = luxuryLevel;
     }
 
-
-    public Room(boolean occupied, String number_of_bedrooms, String room_number, String luxuryLevel) {
-        this.occupied = occupied;
-        this.number_of_bedrooms = number_of_bedrooms;
-        this.room_number = room_number;
-        this.luxuryLevel = luxuryLevel;
-    }
 }
 

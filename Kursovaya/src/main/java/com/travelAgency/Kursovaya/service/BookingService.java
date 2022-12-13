@@ -17,4 +17,8 @@ public class BookingService {
         return bookingRepository.findAll();
     }
 
+    public void deleteBookingById(Integer id){
+        bookingRepository.deleteByIdBooking(id);
+    }
+
 }

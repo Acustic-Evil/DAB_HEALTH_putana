@@ -32,13 +32,10 @@ public class Admin {
         List<Booking> booking = bookingService.getAll();
         List<Room> rooms = hotelService.getAllRooms();
         model.addAttribute("bookingList", booking);
-      /*  model.addAttribute("roomsList", rooms);*/
 
         return "foradm";
     }
 
-/*    @GetMapping("")
-    public String getAdminPage() {return "foradm";}*/
 
     @GetMapping("/sign_up")
     public String getSignPage() {return "sign_up";}
