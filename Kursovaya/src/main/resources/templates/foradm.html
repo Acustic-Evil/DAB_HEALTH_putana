@@ -16,6 +16,9 @@
     <br>
     <div><a class="btn2" href="/admin/sign_up" >Зарегистрировать администратора</a></div>
     <div class="main_title">Заявки на бронирование номера</div>
+    <!--<div>
+        <p
+    </div>-->
     <table class="table">
         <thead>
         <tr style="border-bottom:1px solid black" >
@@ -24,8 +27,8 @@
             <th>Почта</th>
             <th>Дата заезда</th>
             <th>Дата выезда</th>
-            <th>Количество гостей</th><!--
-            <th>Отмена бронирования</th>-->
+            <th>Количество гостей</th>
+            <th>Отмена бронирования</th>
         </tr>
         </thead>
         <tbody>
@@ -36,8 +39,10 @@
             <td th:text="${booking.checkin_date}"></td>
             <td th:text="${booking.checkout_date}"></td>
             <td th:text="${booking.num_of_guests}"></td>
-           <!-- <td><a class="link s" th:href="@{/delete_book/{id_booking}(id_booking=${booking.getIdBooking()})}">&Chi;</a></td>
-       --> </tbody>
+            <td><a class="link s" th:href="@{/delete_book/{id_booking}(id_booking=${booking.getIdBooking()})}">&Chi;</a></td>
+            <!--<td><button class="link s" th:href="@{/delete_book/{id_booking}(id_booking=${booking.getIdBooking()})}"> &Chi;</button></td>-->
+        </tr>
+        </tbody>
     </table>
 </div>
 

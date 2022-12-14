@@ -47,13 +47,13 @@ public class Book {
             return "redirect:/bron?error_book";
         }
     }
-   /* @DeleteMapping("/delete_book/{id_booking}")
+    @DeleteMapping("/delete_book/{id_booking}")
     private String delete_book(@PathVariable Integer id_booking){
         Booking booking = bookingRepository.getBookingByIdBooking(id_booking);
         Room room = booking.getRoom();
         room.setOccupied(false);
-        *//*bookingRepository.deleteByIdBooking(id_booking);*//*
+        bookingRepository.deleteByIdBooking(id_booking);
         bookingService.deleteBookingById(id_booking);
         return "redirect:/admin";
-    }*/
+    }
 }

@@ -14,10 +14,4 @@ public interface RoomRepository extends JpaRepository<Room, Integer> {
 
     Room getFirstByLuxuryLevelAndOccupied(String LuxuryLevel, Boolean Occupied);
 
-    /*default void setRoom_occ(String LuxuryLevel, Boolean Occupied) {
-        Room room = getFirstByLuxuryLevelAndOccupied(LuxuryLevel, Occupied);
-        room.setOccupied(true);
-    }*/
-
-    /*Room getRoomByIdRoom(Room id);*/
 }

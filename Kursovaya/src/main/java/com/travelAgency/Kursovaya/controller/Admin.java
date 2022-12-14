@@ -23,16 +23,15 @@ public class Admin {
 
     @Autowired
     private BookingService bookingService;
-
+/*
     @Autowired
-    private HotelService hotelService;
+    private HotelService hotelService;*/
 
     @GetMapping("")
     public String getAdminPage(Model model) {
         List<Booking> booking = bookingService.getAll();
-        List<Room> rooms = hotelService.getAllRooms();
+        /*List<Room> rooms = hotelService.getAllRooms();*/
         model.addAttribute("bookingList", booking);
-
         return "foradm";
     }
 
